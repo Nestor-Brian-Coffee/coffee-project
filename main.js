@@ -18,6 +18,14 @@ function renderCoffees(coffees) {
     return html;
 }
 
+function createCards(coffee) {
+    var div1 = document.createElement("div");
+    div1.setAttribute('class', 'card');
+    for(var i = 0; i < coffees.length; i++) {
+        return
+    }
+}
+
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
@@ -45,7 +53,7 @@ var coffees = [
     {id: 11, name: 'Espresso', roast: 'dark'},
     {id: 12, name: 'Viennese', roast: 'dark'},
     {id: 13, name: 'Italian', roast: 'dark'},
-    {id: 14, name: 'French', roast: 'dark'},
+    {id: 14, name: 'French', roast: 'dark'}
 ];
 
 var tbody = document.querySelector('#coffees');
