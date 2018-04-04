@@ -53,9 +53,9 @@ h3{
 
 .banner {
     width: 100%;
-    background-size: cover;
-    background-image: url(img/coffee.png);
-    margin-bottom: 0.5rem;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 #roast-selection {
     width: 100%;
@@ -91,4 +91,8 @@ h1 {
     margin-bottom: 1rem;
     margin-right: .5rem;
     transform: rotate(30deg);
+}
+
+#coffeeStuff {
+    width: 100%;
 }
