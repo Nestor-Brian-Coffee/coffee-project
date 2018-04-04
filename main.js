@@ -58,12 +58,24 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'}
 ];
 
-
+function searchResults(coffees) {
+    var filter = input.value;
+    for (var i = 0; i < coffees.length; i++) {
+        var test;
+        test = coffees[i].getElementsByTagName("h3")[0];
+        if (test.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            coffees[i].style.display = "";
+        } else {
+            coffees[i].style.display = "none";
+        }
+    }
+}
 
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
-
+var searchField = document.getElementById("search-field");
 
 tbody.innerHTML = renderCoffees(coffees);
 roastSelection.addEventListener('change', updateCoffees);
+searchField.addEventListener('keyup' , searchResults);

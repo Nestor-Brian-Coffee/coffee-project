@@ -75,3 +75,9 @@ label {
 #body1 {
     margin-bottom: 5rem;
 }
+
+
+#search-field {
+    margin-bottom: 1rem;
+    width: 100%;
+}
