@@ -50,3 +50,10 @@ h3{
     margin-top: 3rem;
     margin-bottom: 3rem;
 }
+
+.banner {
+    width: 100%;
+
+    background-size: cover;
+    background-image: url(img/coffee.png);
+}
