@@ -1,14 +1,14 @@
 "use strict";
 
-function renderCoffee(coffee) {
-    var html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
-    html += '</tr>';
-
-    return html;
-}
+// function renderCoffee(coffee) {
+//     var html = '<tr class="coffee">';
+//     html += '<td>' + coffee.id + '</td>';
+//     html += '<td>' + coffee.name + '</td>';
+//     html += '<td>' + coffee.roast + '</td>';
+//     html += '</tr>';
+//
+//     return html;
+// }
 
 function renderCoffees(coffees) {
     var html = '';
@@ -55,21 +55,18 @@ var temp;
 var temp2;
 for (var i = 0; i < coffees.length; i++) {
     temp = document.createElement("div");
-    temp.className = "card col-4";
-    temp.style.textAlign = "center";
-    temp.style.fontWeight = "bold";
-    temp.style.fontSize = "smaller";
-    temp.style.padding = "15px";
-    // temp.style.margin = "10px";
-    temp.style.width = "50%";
+    temp.className = "card col-3 mr-3 mt-3 coffeeCards";
+    // temp.classList.add('new-class');
     temp.innerHTML = "<h3>" + coffees[i].name + "</h3>";
     document.getElementsByClassName("row")[0].appendChild(temp);
     temp2 = document.createElement("p");
     temp2.className = "card-text";
+    temp2.style.textAlign = "center";
     temp2.innerHTML = coffees[i].roast;
     document.getElementsByClassName("card")[i].appendChild(temp2);
-
+    if (coffees[i].roast === "dark") {
+        temp.classList.add("darkcard")
+    }
 }
-
 // tbody.innerHTML = renderCoffees(coffees);
 submitButton.addEventListener('click', updateCoffees);

@@ -13,6 +13,17 @@ td, th {
 
 }
 
-.card-text {
+.coffeeCards {
+    text-align: center;
+    font-weight: bold;
+    font-size: smaller;
+    padding: 15px;
+}
 
+.darkcard {
+    background-color: darkgrey;
+}
+
+body {
+    background-color: #6F442A;
 }
