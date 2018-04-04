@@ -52,16 +52,23 @@ var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 var temp;
+var temp2;
 for (var i = 0; i < coffees.length; i++) {
     temp = document.createElement("div");
-    temp.className = "card col";
+    temp.className = "card col-4";
     temp.style.textAlign = "center";
     temp.style.fontWeight = "bold";
     temp.style.fontSize = "smaller";
     temp.style.padding = "15px";
-    temp.style.margin = "15px";
-    temp.innerHTML = coffees[i].name;
-    document.getElementsByTagName("div")[0].appendChild(temp);
+    // temp.style.margin = "10px";
+    temp.style.width = "50%";
+    temp.innerHTML = "<h3>" + coffees[i].name + "</h3>";
+    document.getElementsByClassName("row")[0].appendChild(temp);
+    temp2 = document.createElement("p");
+    temp2.className = "card-text";
+    temp2.innerHTML = coffees[i].roast;
+    document.getElementsByClassName("card")[i].appendChild(temp2);
+
 }
 
 // tbody.innerHTML = renderCoffees(coffees);
