@@ -53,9 +53,9 @@ h3{
 
 .banner {
     width: 100%;
-
     background-size: cover;
     background-image: url(img/coffee.png);
+    margin-bottom: 0.5rem;
 }
 #roast-selection {
     width: 100%;
@@ -80,4 +80,8 @@ label {
 #search-field {
     margin-bottom: 1rem;
     width: 100%;
+}
+
+h1 {
+    margin-bottom: 1rem;
 }
