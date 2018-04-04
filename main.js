@@ -9,7 +9,7 @@ function renderCoffee(coffee) {
     }if (coffee.roast === "light") {
         coffeeClass = "lt-card"
     }
-    var html = '<div class="card col-3 mr-3 mt-3 coffeeCards ' + coffeeClass + '">';
+    var html = '<div class="card col-3 mr-3 mt-3  coffeeCards ' + coffeeClass + '">';
     html += '<h3>' + coffee.name + '</h3>';
     html += '<p>' + coffee.roast + '</p>';
     html += '</div>';
