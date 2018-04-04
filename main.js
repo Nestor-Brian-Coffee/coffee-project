@@ -32,8 +32,10 @@ function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
+
     coffees.forEach(function (coffee) {
-        if (coffee.roast === selectedRoast || selectedRoast === "All") {
+        var search = document.querySelector("#search-field").value.toLowerCase();
+        if ((coffee.roast === selectedRoast || selectedRoast === "All") && coffee.name.toLowerCase().includes(search)=== true) {
             filteredCoffees.push(coffee);
         }
     });
@@ -57,25 +59,25 @@ var coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'}
 ];
-
-function searchResults(coffees) {
-    var filter = input.value;
-    for (var i = 0; i < coffees.length; i++) {
-        var test;
-        test = coffees[i].getElementsByTagName("h3")[0];
-        if (test.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            coffees[i].style.display = "";
-        } else {
-            coffees[i].style.display = "none";
-        }
-    }
-}
+//
+// function searchResults(coffees) {
+//     var filter = input.value;
+//     for (var i = 0; i < coffees.length; i++) {
+//         var test;
+//         test = coffees[i].getElementsByTagName("h3")[0];
+//         if (test.innerHTML.toUpperCase().indexOf(filter) > -1) {
+//             coffees[i].style.display = "";
+//         } else {
+//             coffees[i].style.display = "none";
+//         }
+//     }
+// }
 
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
-var searchField = document.getElementById("search-field");
+var searchField = document.querySelector("#search-field");
 
 tbody.innerHTML = renderCoffees(coffees);
 roastSelection.addEventListener('change', updateCoffees);
-searchField.addEventListener('keyup' , searchResults);
+searchField.addEventListener('input' , updateCoffees);
