@@ -85,3 +85,10 @@ label {
 h1 {
     margin-bottom: 1rem;
 }
+#bean{
+    width: 63.125px;
+    height: 76.875px;
+    margin-bottom: 1rem;
+    margin-right: .5rem;
+    transform: rotate(30deg);
+}
