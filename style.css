@@ -14,16 +14,38 @@ td, th {
 }
 
 .coffeeCards {
+    font-family: 'Open Sans', sans-serif;
     text-align: center;
     font-weight: bold;
     font-size: smaller;
     padding: 15px;
 }
 
-.darkcard {
-    background-color: darkgrey;
+.drk-card {
+    background-color: #93794b;
+}
+.med-card{
+    background-color: #bb9a61;
+}
+.lt-card{
+    background-color: #edc176;
 }
 
 body {
     background-color: #6F442A;
+}
+#header{
+    text-align: center;
+    color: #BB9A61;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 6rem;
+    font-weight: bolder;
+}
+h3{
+    font-weight: bolder;
+}
+#form{
+    width: 100%;
+    text-align: center;
+    margin-top: 3rem;
 }

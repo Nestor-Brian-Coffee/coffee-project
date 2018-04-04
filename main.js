@@ -12,7 +12,7 @@
 
 function renderCoffees(coffees) {
     var html = '';
-    for(var i = 0; i<coffees.length; i++) {
+    for (var i = 0; i < coffees.length; i++) {
         html += renderCoffee(coffees[i]);
     }
     return html;
@@ -22,7 +22,7 @@ function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
-    coffees.forEach(function(coffee) {
+    coffees.forEach(function (coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
         }
@@ -65,8 +65,14 @@ for (var i = 0; i < coffees.length; i++) {
     temp2.innerHTML = coffees[i].roast;
     document.getElementsByClassName("card")[i].appendChild(temp2);
     if (coffees[i].roast === "dark") {
-        temp.classList.add("darkcard")
+        temp.classList.add("drk-card")
+    }
+    if (coffees[i].roast === "medium"){
+        temp.classList.add("med-card")
+    }
+    if (coffees[i].roast === "light"){
+        temp.classList.add("lt-card")
     }
 }
 // tbody.innerHTML = renderCoffees(coffees);
-submitButton.addEventListener('click', updateCoffees);
+    submitButton.addEventListener('click', updateCoffees);
