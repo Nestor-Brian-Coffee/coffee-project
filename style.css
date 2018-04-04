@@ -57,3 +57,21 @@ h3{
     background-size: cover;
     background-image: url(img/coffee.png);
 }
+#roast-selection {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+#submit {
+    width: 100%;
+}
+
+label {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+}
+
+#body1 {
+    margin-bottom: 5rem;
+}

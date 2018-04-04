@@ -13,20 +13,23 @@
 <div class="jumbotron banner container-fluid">
 
 </div>
-<div id="form">
-    <form>
-        <label for="roast-selection">Roast: </label>
-        <select id="roast-selection">
-            <option>All</option>
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-        </select>
-
-        <input id="submit" type="submit"/>
-    </form>
+<div class = container-fluid>
+    <div class ="col-3 offset-8">
+        <div id="form">
+            <form>
+                <label for="roast-selection">Select your Roast:</label>
+                <select id="roast-selection">
+                    <option>All</option>
+                    <option>Light</option>
+                    <option>Medium</option>
+                    <option>Dark</option>
+                </select>
+                <input id="submit" type="submit"/>
+            </form>
+        </div>
+    </div>
 </div>
-<div class=container-fluid>
+<div class="container-fluid" id="body1">
     <div class="row justify-content-center" id="coffees"></div>
 </div>
 <script src="main.js"></script>
