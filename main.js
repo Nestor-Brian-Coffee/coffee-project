@@ -42,7 +42,7 @@ function updateCoffees(e) {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 var coffees;
-if(localStorage.getItem("coffees") !== "null"){
+if(localStorage.getItem("coffees") !== null){
     coffees = JSON.parse(localStorage.getItem('coffees'));
 
     // localStorage.getItem("coffees");
@@ -92,7 +92,7 @@ function updateStoredCoffee(coffees) {
 var tbody = document.querySelector('#coffees');
 var roastSelection = document.querySelector('#roast-selection');
 var searchField = document.querySelector("#search-field");
-
+var refreshPage = document.querySelector("#resetbutton");
 var resetCoffe = document.querySelector("#button");
 
 
