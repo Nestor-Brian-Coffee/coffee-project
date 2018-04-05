@@ -59,25 +59,50 @@ var coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'}
 ];
-//
-// function searchResults(coffees) {
-//     var filter = input.value;
-//     for (var i = 0; i < coffees.length; i++) {
-//         var test;
-//         test = coffees[i].getElementsByTagName("h3")[0];
-//         if (test.innerHTML.toUpperCase().indexOf(filter) > -1) {
-//             coffees[i].style.display = "";
-//         } else {
-//             coffees[i].style.display = "none";
-//         }
-//     }
-// }
 
+function createCoffee(coffees, newcoffe, roast) {
+    var roast = (roast !== undefined) ? roast : document.querySelector("#type-roast").value;
+    var newcoffe = (newcoffe !== undefined) ? newcoffe : document.querySelector("#createNewBean").value;
+    var id = coffees.length+1;
+
+    var coffee = {
+        id: id,
+        name: name,
+        roast: roast
+    };
+
+    coffees.push(coffee);
+    updateStoredCoffee(coffees)
+
+}
+function updateStoredCoffee(coffees) {
+    var string = JSON.stringify(coffees);
+    localStorage.setItem('coffees', string);
+
+}
+// function updateCoffees(e) {
+//     e.preventDefault(); // don't submit the form, we just want to update the data
+//     var selectedRoast = roastSelection.value;
+//     var filteredCoffees = [];
+//
+//     coffees.forEach(function (coffee) {
+//         var search = document.querySelector("#search-field").value.toLowerCase();
+//         if ((coffee.roast === selectedRoast || selectedRoast === "All") && coffee.name.toLowerCase().includes(search)=== true) {
+//             filteredCoffees.push(coffee);
+//         }
+//     });
+//     tbody.innerHTML = renderCoffees(filteredCoffees);
+// }
 var tbody = document.querySelector('#coffees');
-var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 var searchField = document.querySelector("#search-field");
+var roastNew = document.querySelector('#type-roast');
+var coffee = document.querySelector('#new-bean');
+var resetCoffe = document.querySelector("#button");
+
 
 tbody.innerHTML = renderCoffees(coffees);
 roastSelection.addEventListener('change', updateCoffees);
 searchField.addEventListener('input' , updateCoffees);
+roastNew.addEventListener('change', createCoffee);
+coffee.addEventListener('keydown', createCoffee);
