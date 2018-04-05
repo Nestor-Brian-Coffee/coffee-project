@@ -44,8 +44,6 @@ function updateCoffees(e) {
 var coffees;
 if(localStorage.getItem("coffees") !== null){
     coffees = JSON.parse(localStorage.getItem('coffees'));
-
-    // localStorage.getItem("coffees");
 } else{
      coffees = [
         {id: 1, name: 'Light City', roast: 'light'},
@@ -88,6 +86,11 @@ function updateStoredCoffee(coffees) {
     var string = JSON.stringify(coffees);
     localStorage.setItem('coffees', string);
 }
+function refreshCoffees(e) {
+    localStorage.removeItem("coffees");
+    updateCoffees(e);
+    location.reload();
+}
 
 var tbody = document.querySelector('#coffees');
 var roastSelection = document.querySelector('#roast-selection');
@@ -100,3 +103,4 @@ tbody.innerHTML = renderCoffees(coffees);
 roastSelection.addEventListener('change', updateCoffees);
 searchField.addEventListener('input' , updateCoffees);
 resetCoffe.addEventListener('click', createCoffee);
+refreshPage.addEventListener('click', refreshCoffees);
